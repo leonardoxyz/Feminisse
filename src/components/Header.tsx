@@ -1,7 +1,10 @@
 import { Search, Heart, ShoppingBag, Menu, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+  
   const categories = [
     "WINTER COLLECTION",
     "PROMOS", 
@@ -59,7 +62,12 @@ const Header = () => {
               <Button variant="ghost" size="icon" className="hover:bg-pink-light hover:text-primary transition-colors duration-300">
                 <Heart className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:bg-pink-light hover:text-primary transition-colors duration-300">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="hover:bg-pink-light hover:text-primary transition-colors duration-300"
+                onClick={() => navigate('/perfil')}
+              >
                 <User className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="icon" className="relative hover:bg-pink-light hover:text-primary transition-colors duration-300">
